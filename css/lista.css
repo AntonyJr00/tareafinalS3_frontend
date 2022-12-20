@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(0deg, #0006, #0006),
+    url("../img/img-lista/pokemon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  color: crimson;
+  margin: 30px 0;
+  font-size: 2.4em;
+}
+
+h2 {
+  text-align: center;
+  color: #d2d2d2;
+}
+
+#titulo {
+  text-align: center;
+  color: crimson;
+  margin-top: 10px;
+  font-size: 2em;
+  text-transform: capitalize;
+  font-weight: bold;
+  position: relative;
+}
+
+#titulo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  border: 1px solid #fff;
+  bottom: -10px;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+  text-transform: capitalize;
+  background-color: transparent;
+  color: #f2f2f2;
+  border-color: crimson;
+  border-radius: 10px;
+  font-size: 1.3em;
+  padding: 5px;
+  margin: 30px 0;
+}
+
+select option {
+  color: #d2d2d2;
+  background-color: #001;
+  font-size: 0.8em;
+}
+
+#card {
+  background-color: #3332;
+  padding: 20px;
+  backdrop-filter: blur(20px);
+}
+
+#btnfav {
+  font-size: 1.3em;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: brown;
+  color: #f2f2f2;
+}
+
+/* pokebola */
+span {
+  width: 30px;
+  height: 30px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+span::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  background-color: red;
+  border-radius: 30px 30px 0 0;
+  top: 0;
+  left: 0;
+}
+
+.poke {
+  width: 100%;
+  height: 5px;
+  background-color: #333;
+  position: absolute;
+  margin-top: 11.5px;
+}
+
+.poke::before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: -2.3px;
+  left: 30%;
+}
+
+.poke::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 40%;
+}
