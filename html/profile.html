@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/profile.css" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="navlist">
+        <li><a href="/form.html">Formulario de registro</a></li>
+        <li><a href="/tabla.html">Lista de empleados</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="cabezera">
+        <div class="picture">
+          <img
+            class="header__img"
+            src="../img/img-profile/usuario.gif"
+            alt="empleado"
+          />
+        </div>
+      </div>
+      <div class="main">
+        <div class="titulo">
+          <input type="text" value="Nombre" id="nombre" disabled />
+          <input type="text" value="Correo" id="correo" disabled />
+          <input type="text" value="Alias" id="nickname" disabled />
+          <!-- <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="contraseña"
+          /> -->
+        </div>
+        <p class="texto">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+          provident minus qui quibusdam, quaerat molestiae animi, harum id ad
+          porro nam autem! ada a hoiq fg jq hoaib jbajhaiuhdouiqghoh hqioh cab
+          joiho oaihqhuhg hahuhai hiha hih hi h ihaiha
+        </p>
+
+        <div class="button__container">
+          <button class="button" id="editar">Editar</button>
+          <button class="button" id="borrar">Borrar</button>
+        </div>
+        <div></div>
+      </div>
+      <footer>
+        <div class="foot">
+          <p class="foo__text">Edad</p>
+          <p class="foo__number">32 años</p>
+        </div>
+        <div class="foot">
+          <p class="foo__text">Numero</p>
+          <p class="foo__number">912347201</p>
+        </div>
+        <div class="foot">
+          <p class="foo__text">Estado</p>
+          <p class="foo__number">activo</p>
+        </div>
+      </footer>
+    </div>
+    <script src="../script/profile.js" type="module"></script>
+  </body>
+</html>
