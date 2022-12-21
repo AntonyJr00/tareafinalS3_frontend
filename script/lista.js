@@ -1,15 +1,16 @@
 const selects = document.getElementById("pokemon");
 const btnfav = document.getElementById("btnfav");
+const parrafo = document.getElementById("titulo");
 
 async function clickSelccionar() {
-  const data = await fetch(`https://pokeapi.co/api/v2/pokemon/`);
-  const { results: pokenones } = await data.json();
+  const data = await fetch(`http://localhost:9000/pokemon/listar`);
+  const result = await data.json();
   const option = document.getElementById("pokemon");
-  console.log(pokenones);
-  option.innerHTML = pokenones
+  //console.log(result);
+  option.innerHTML = result
     .map((pokemon) => {
       return `
-    <option value=${pokemon.name}>${pokemon.name}</option>
+    <option id=${pokemon._id} value=${pokemon.name}>${pokemon.name}</option>
     `;
     })
     .join("");
@@ -28,26 +29,44 @@ document.addEventListener("change", (e) => {
 clickSelccionar();
 
 async function cambiarImg(pokemon = "") {
-  const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+  const data = await fetch(`http://localhost:9000/pokemon/listar/${pokemon}`);
   const result = await data.json();
-  const img = result.sprites.other.dream_world.front_default;
+  const img = result.url;
   const card = document.getElementById("card");
   card.innerHTML = `
+  <div class=${result.favorite ? "favorito" : "no-favorito"}>
     <img
-        width="300px"
-        src=${img}
-        alt="gato"
-      />
-    `;
+    width="300px"
+    src=${img}
+    alt="gato"
+    />
+  <div>
+  `;
 }
 cambiarImg("bulbasaur");
 
 function ponerText(arg) {
-  const parrafo = document.getElementById("titulo");
   parrafo.textContent = arg;
   // console.log(arg);
-  btnfav.addEventListener("click", () => {
-    console.log(parrafo.value);
-    // return arg;
-  });
 }
+ponerText("Bulbasaur");
+//hoy dia
+btnfav.addEventListener("click", async () => {
+  const respConfirm = confirm("Agregar a favoritos?");
+  if (respConfirm) {
+    const result = await fetch(
+      `http://localhost:9000/pokemon/favoritos/agregar/${selects.value}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = await result.json();
+    console.log(data);
+    clickSelccionar();
+    cambiarImg("bulbasaur");
+  }
+  return;
+});

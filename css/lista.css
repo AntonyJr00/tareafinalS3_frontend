@@ -132,3 +132,30 @@ span::before {
   top: 0;
   left: 40%;
 }
+#card .favorito::after {
+  content: "fav";
+  display: block;
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: white;
+}
+#card .no-favorito::after {
+  content: "no fav";
+  display: block;
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: white;
+}
+#card {
+  position: relative;
+}
+
+button {
+  margin-bottom: 30px;
+}
