@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   --text-gray: #888888;
   --color-fuxia: #d12eb9;
@@ -11,6 +12,7 @@
 
 body {
   background-color: #f2f2f2;
+  font-family: "Audiowide", sans-serif;
 }
 
 input {
