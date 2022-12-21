@@ -135,25 +135,28 @@ span::before {
   left: 40%;
 }
 #card .favorito::after {
-  content: "fav";
+  content: "";
   display: block;
-  width: 75px;
-  height: 75px;
+  width: 55px;
+  height: 55px;
+  background-image: url("../img/img-lista/heart-solid.svg");
+  filter: invert(20%) sepia(100%) saturate(4000%);
   position: absolute;
-  left: 10px;
-  top: 10px;
-  color: white;
+  right: 5px;
+  top: 5px;
 }
 #card .no-favorito::after {
-  content: "no fav";
-  display: block;
-  width: 75px;
-  height: 75px;
+  content: "";
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  background-image: url("../img/img-lista/heart-regular.svg");
+  filter: invert(20%) sepia(100%) saturate(4000%);
   position: absolute;
-  left: 10px;
-  top: 10px;
-  color: white;
+  right: 5px;
+  top: 5px;
 }
+
 #card {
   position: relative;
 }
